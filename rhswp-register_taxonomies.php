@@ -2,14 +2,13 @@
 
 /**
  * @link              https://wbvb.nl
- * @since             1.0.0
  * @package           rhswp-posttypes
  *
  * @wordpress-plugin
  * Plugin Name:       ICTU / WP Register post types and taxonomies
  * Plugin URI:        https://github.com/ICTU/Digitale-Overheid---WordPress-Custom-Post-Types-and-Taxonomies
  * Description:       Voor het registeren van custom post types en taxonomieën.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Paul van Buuren
  * Author URI:        https://wbvb.nl/
  * License:           GPL-2.0+
@@ -46,6 +45,22 @@ if ( ! defined( 'RHSWP_CPT_SLIDER' ) ) {
 }
 
 //========================================================================================================
+// constants for rewrite rules
+
+if ( ! defined( 'RHSWP_DOSSIERPOSTCONTEXT' ) ) {
+  define( 'RHSWP_DOSSIERPOSTCONTEXT',         'dossierpostcontext' );
+}
+
+if ( ! defined( 'RHSWP_DOSSIEREVENTCONTEXT' ) ) {
+  define( 'RHSWP_DOSSIEREVENTCONTEXT',        'dossiereventcontext' );
+}
+
+if ( ! defined( 'RHSWP_DOSSIERDOCUMENTCONTEXT' ) ) {
+  define( 'RHSWP_DOSSIERDOCUMENTCONTEXT',     'dossierdocumentcontext' );
+}
+
+//========================================================================================================
+
 
 /**
  * Begins execution of the plugin.
@@ -54,9 +69,8 @@ if ( ! defined( 'RHSWP_CPT_SLIDER' ) ) {
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.0
+ * @since    1.0.1
  */
-
 
 
 if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
@@ -93,6 +107,7 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 
       add_action( 'init', array( $this, 'register_post_type' ) );
       add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
+      add_action( 'init', array( $this, 'rhswp_dossiercontext_add_rewrite_rules' ) );
 
     }
   
@@ -285,6 +300,74 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
     	flush_rewrite_rules();
   
     }
+
+
+    /** ----------------------------------------------------------------------------------------------------
+     * Add rewrite rules
+     */
+    public function rhswp_dossiercontext_add_rewrite_rules() {
+    
+      // rewrite rules for posts in dossier context
+      add_rewrite_rule( '(.+?)(/' . RHSWP_DOSSIERPOSTCONTEXT . '/)(.+?)/?$', 'index.php?name=$matches[3]&' . RHSWP_DOSSIERPOSTCONTEXT . '=$matches[1]', 'top');
+      add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERPOSTCONTEXT . '/?$', 'index.php?pagename=$matches[1]', 'top');
+    
+      // rewrite rules for documents in dossier context
+      add_rewrite_rule( '(.+?)(/' . RHSWP_DOSSIERDOCUMENTCONTEXT . '/)(.+?)/?$', 'index.php?document=$matches[3]&' . RHSWP_DOSSIERPOSTCONTEXT . '=$matches[1]', 'top');
+      add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERDOCUMENTCONTEXT . '/?$', 'index.php?pagename=$matches[1]', 'top');
+    
+      // rewrite rules for events in dossier context
+      add_rewrite_rule( '(.+?)(/' . RHSWP_DOSSIEREVENTCONTEXT . '/)(.+?)/?$', 'index.php?event=$matches[3]&' . RHSWP_DOSSIERPOSTCONTEXT . '=$matches[1]', 'top');
+      add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIEREVENTCONTEXT . '/?$', 'index.php?pagename=$matches[1]', 'top');
+      
+      // posts overview with paging
+      add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/page/([0-9]+)/?$', 'index.php?paged=$matches[2]&pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top');
+    
+      // posts overview without paging
+      add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top');
+      
+      // events overview with paging
+      add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTEVENTOVERVIEW . '/page/([0-9]+)/?$', 'index.php?paged=$matches[2]&pagename=' . RHSWP_DOSSIERCONTEXTEVENTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top');
+    
+      // events overview without paging
+      add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTEVENTOVERVIEW . '/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTEVENTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top');
+    
+      // documents overview with paging
+      add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/page/([0-9]+)/?$', 'index.php?paged=$matches[2]&pagename=' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top');
+    
+      // documents overview without paging
+      add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top');
+    
+    
+      // posts overview for category with paging
+      add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/(.+?)/page/([0-9]+)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]&category_slug=$matches[2]&paged=$matches[3]', 'top');
+    
+      // single post in context of dossier and category
+      add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/([^/]*)/([^/]*)/?$', 'index.php?' . RHSWP_CT_DOSSIER . '=$matches[1]&category_slug=$matches[2]&name=$matches[3]', 'top');
+    
+      // posts overview for category without paging
+      add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/([^/]*)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]&category_slug=$matches[2]', 'top');
+    
+      // posts overview without category without paging
+      add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/([^/]*)/?$', 'index.php?' . RHSWP_CT_DOSSIER . '=$matches[1]&name=$matches[2]', 'top');
+    
+      if ( function_exists( 'get_field' ) ) {
+        if( get_field( 'global_search_page', 'option') ) {
+          
+          $zoekpagina = get_field( 'global_search_page', 'option');
+      
+          // rewrite rules for events in dossier context
+          add_rewrite_rule( '?(s=)(.+?)?$', 'index.php?page_id=' . $zoekpagina->ID . '&searchwpquery=$matches[2]', 'top');
+          
+        }  
+      }  
+    
+      
+    
+    }
+
+
+=======    
+    
   
   
   }

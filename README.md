@@ -25,7 +25,8 @@ Aanleiding voor het scheiden van theme en definitie van CPT / CT is het opzetten
 * eh
 
 ## Current version:
-* 1.0.0 - First set up of plugin files.
+* 1.0.1 - More code transfer from theme files.
 
 ## Version history
+* 1.0.1 - More code transfer from theme files.
 * 1.0.0 - First set up of plugin files.
