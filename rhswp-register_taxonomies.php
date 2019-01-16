@@ -7,8 +7,8 @@
  * @wordpress-plugin
  * Plugin Name:       ICTU / WP Register post types and taxonomies
  * Plugin URI:        https://github.com/ICTU/Digitale-Overheid---WordPress-Custom-Post-Types-and-Taxonomies
- * Description:       Voor het registeren van custom post types en taxonomieën.
- * Version:           1.0.1
+ * Description:       Plugin for digitaleoverheid.nl to register custom post types and custom taxonomies
+ * Version:           2.0.1
  * Author:            Paul van Buuren
  * Author URI:        https://wbvb.nl/
  * License:           GPL-2.0+
@@ -69,7 +69,7 @@ if ( ! defined( 'RHSWP_DOSSIERDOCUMENTCONTEXT' ) ) {
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.1
+ * @since    2.0.1
  */
 
 
@@ -128,34 +128,34 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
       // ---------------------------------------------------------------------------------------------------
       // dossier custom taxonomy
     	$labels = array(
-    		"name"                  => _x( 'Dossiers', 'Dossier', 'rhswp-posttypes' ),
-    		"singular_name"         => _x( 'Dossier', 'Dossier', 'rhswp-posttypes' ),
+    		"name"                  => _x( 'Topics', 'Dossier', 'rhswp-posttypes' ),
+    		"singular_name"         => _x( 'Topic', 'Dossier', 'rhswp-posttypes' ),
     		);
     
     	$labels = array(
-    		"name"                  => _x( 'Dossiers', 'Dossier', 'rhswp-posttypes' ),
-    		"singular_name"         => _x( 'Dossier', 'Dossier', 'rhswp-posttypes' ),
-    		"menu_name"             => _x( 'Dossiers', 'Dossier', 'rhswp-posttypes' ),
-    		"all_items"             => _x( 'Alle dossiers', 'Dossier', 'rhswp-posttypes' ),
-    		"add_new"               => _x( 'Nieuw dossier toevoegen', 'Dossier', 'rhswp-posttypes' ),
-    		"add_new_item"          => _x( 'Voeg nieuw dossier toe', 'Dossier', 'rhswp-posttypes' ),
-    		"edit_item"             => _x( 'Bewerk dossier', 'Dossier', 'rhswp-posttypes' ),
-    		"new_item"              => _x( 'Nieuw dossier', 'Dossier', 'rhswp-posttypes' ),
-    		"view_item"             => _x( 'Bekijk dossier', 'Dossier', 'rhswp-posttypes' ),
-    		"search_items"          => _x( 'Zoek dossier', 'Dossier', 'rhswp-posttypes' ),
-    		"not_found"             => _x( 'Geen dossiers gevonden', 'Dossier', 'rhswp-posttypes' ),
-    		"not_found_in_trash"    => _x( 'Geen dossiers gevonden in de prullenbak', 'Dossier', 'rhswp-posttypes' ),
-    		"featured_image"        => __( 'Uitgelichte afbeelding', 'rhswp-posttypes' ),
-    		"archives"              => __( 'Overzichten', 'rhswp-posttypes' ),
-    		"uploaded_to_this_item" => __( 'Bijbehorende bestanden', 'rhswp-posttypes' ),
+    		"name"                  => _x( 'Topics', 'Dossier', 'rhswp-posttypes' ),
+    		"singular_name"         => _x( 'Topic', 'Dossier', 'rhswp-posttypes' ),
+    		"menu_name"             => _x( 'Topics', 'Dossier', 'rhswp-posttypes' ),
+    		"all_items"             => _x( 'All topics', 'Dossier', 'rhswp-posttypes' ),
+    		"add_new"               => _x( 'Add new topic', 'Dossier', 'rhswp-posttypes' ),
+    		"add_new_item"          => _x( 'Add new topic', 'Dossier', 'rhswp-posttypes' ),
+    		"edit_item"             => _x( 'Edit topic', 'Dossier', 'rhswp-posttypes' ),
+    		"new_item"              => _x( 'New topic', 'Dossier', 'rhswp-posttypes' ),
+    		"view_item"             => _x( 'View topic', 'Dossier', 'rhswp-posttypes' ),
+    		"search_items"          => _x( 'Search topic', 'Dossier', 'rhswp-posttypes' ),
+    		"not_found"             => _x( 'No topic found', 'Dossier', 'rhswp-posttypes' ),
+    		"not_found_in_trash"    => _x( 'No topic found in trash', 'Dossier', 'rhswp-posttypes' ),
+    		"featured_image"        => __( 'Featured image', 'rhswp-posttypes' ),
+    		"archives"              => __( 'Archives', 'rhswp-posttypes' ),
+    		"uploaded_to_this_item" => __( 'Uploaded media', 'rhswp-posttypes' ),
     		);
   
     	$args = array(
-    		"label"                 => _x( 'Dossiers', 'Dossiers label', 'rhswp-posttypes' ),
+    		"label"                 => _x( 'Topics', 'Dossiers label', 'rhswp-posttypes' ),
     		"labels"              => $labels,
     		"public"              => true,
     		"hierarchical"        => true,
-    		"label"                  => _x( 'Dossiers', 'Dossier', 'rhswp-posttypes' ),
+    		"label"                  => _x( 'Topics', 'Dossier', 'rhswp-posttypes' ),
     		"show_ui"             => true,
     		"show_in_menu"        => true,
     		"show_in_nav_menus"   => true,
@@ -167,7 +167,6 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
     		"show_in_quick_edit"  => false,
     	);
     	register_taxonomy( RHSWP_CT_DOSSIER, array( "post", "page", "links", 'event', "document" ), $args );
-      add_action( 'admin_menu', 'myprefix_remove_meta_box');
 
       // ---------------------------------------------------------------------------------------------------
       // digitbeter kleuren custom taxonomy
@@ -189,9 +188,9 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
     		"search_items"          => _x( 'Zoek onderdeel', 'digibeterkleuren', 'rhswp-posttypes' ),
     		"not_found"             => _x( 'Geen onderdelen gevonden', 'digibeterkleuren', 'rhswp-posttypes' ),
     		"not_found_in_trash"    => _x( 'Geen onderdelen gevonden in de prullenbak', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"featured_image"        => __( 'Uitgelichte afbeelding', 'rhswp-posttypes' ),
-    		"archives"              => __( 'Overzichten', 'rhswp-posttypes' ),
-    		"uploaded_to_this_item" => __( 'Bijbehorende bestanden', 'rhswp-posttypes' ),
+    		"featured_image"        => __( 'Featured image', 'rhswp-posttypes' ),
+    		"archives"              => __( 'Archives', 'rhswp-posttypes' ),
+    		"uploaded_to_this_item" => __( 'Uploaded media', 'rhswp-posttypes' ),
     		);
 
     	$args = array(
@@ -215,25 +214,25 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
       // ---------------------------------------------------------------------------------------------------
       // documenten custom post type
     	$labels = array(
-    		"name"                  => _x( 'Documenten', 'document type', 'rhswp-posttypes' ),
+    		"name"                  => _x( 'Documents', 'document type', 'rhswp-posttypes' ),
     		"singular_name"         => _x( 'Document', 'document type', 'rhswp-posttypes' ),
-    		"menu_name"             => _x( 'Documenten', 'document type', 'rhswp-posttypes' ),
-    		"all_items"             => _x( 'Alle documenten', 'document type', 'rhswp-posttypes' ),
-    		"add_new"               => _x( 'Nieuw document toevoegen', 'document type', 'rhswp-posttypes' ),
-    		"add_new_item"          => _x( 'Voeg nieuw document toe', 'document type', 'rhswp-posttypes' ),
-    		"edit_item"             => _x( 'Bewerk document', 'document type', 'rhswp-posttypes' ),
-    		"new_item"              => _x( 'Nieuw document', 'document type', 'rhswp-posttypes' ),
-    		"view_item"             => _x( 'Bekijk document', 'document type', 'rhswp-posttypes' ),
-    		"search_items"          => _x( 'Zoek document', 'document type', 'rhswp-posttypes' ),
-    		"not_found"             => _x( 'Geen documenten gevonden', 'document type', 'rhswp-posttypes' ),
-    		"not_found_in_trash"    => _x( 'Geen documenten gevonden in de prullenbak', 'document type', 'rhswp-posttypes' ),
-    		"featured_image"        => __( 'Uitgelichte afbeelding', 'rhswp-posttypes' ),
-    		"archives"              => __( 'Overzichten', 'rhswp-posttypes' ),
-    		"uploaded_to_this_item" => __( 'Bijbehorende bestanden', 'rhswp-posttypes' ),
+    		"menu_name"             => _x( 'Documents', 'document type', 'rhswp-posttypes' ),
+    		"all_items"             => _x( 'All documents', 'document type', 'rhswp-posttypes' ),
+    		"add_new"               => _x( 'Add new document', 'document type', 'rhswp-posttypes' ),
+    		"add_new_item"          => _x( 'Add new document', 'document type', 'rhswp-posttypes' ),
+    		"edit_item"             => _x( 'Edit document', 'document type', 'rhswp-posttypes' ),
+    		"new_item"              => _x( 'New document', 'document type', 'rhswp-posttypes' ),
+    		"view_item"             => _x( 'View document', 'document type', 'rhswp-posttypes' ),
+    		"search_items"          => _x( 'Search document', 'document type', 'rhswp-posttypes' ),
+    		"not_found"             => _x( 'No documents found', 'document type', 'rhswp-posttypes' ),
+    		"not_found_in_trash"    => _x( 'No documents found in trash', 'document type', 'rhswp-posttypes' ),
+    		"featured_image"        => __( 'Featured image', 'rhswp-posttypes' ),
+    		"archives"              => __( 'Archives', 'rhswp-posttypes' ),
+    		"uploaded_to_this_item" => __( 'Uploaded media', 'rhswp-posttypes' ),
     		);
     
     	$args = array(
-    		"label"                 => _x( 'Documenten', 'Documenten label', 'rhswp-posttypes' ),
+    		"label"                 => _x( 'Documents', 'Documents label', 'rhswp-posttypes' ),
     		"labels"              => $labels,
     		"description"         => "",
     		"public"              => true,
@@ -269,9 +268,9 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
     		"search_items"          => _x( 'Zoek carrousel', 'caroussel', 'rhswp-posttypes' ),
     		"not_found"             => _x( 'Geen carrousels gevonden', 'caroussel', 'rhswp-posttypes' ),
     		"not_found_in_trash"    => _x( 'Geen carrousels gevonden in de prullenbak', 'caroussel', 'rhswp-posttypes' ),
-    		"featured_image"        => __( 'Uitgelichte afbeelding', 'rhswp-posttypes' ),
-    		"archives"              => __( 'Overzichten', 'rhswp-posttypes' ),
-    		"uploaded_to_this_item" => __( 'Bijbehorende bestanden', 'rhswp-posttypes' ),
+    		"featured_image"        => __( 'Featured image', 'rhswp-posttypes' ),
+    		"archives"              => __( 'Archives', 'rhswp-posttypes' ),
+    		"uploaded_to_this_item" => __( 'Uploaded media', 'rhswp-posttypes' ),
     		);
     
     	$args = array(
@@ -360,27 +359,13 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
           
         }  
       }  
-    
-      
-    
     }
-
-
-=======    
-    
+    //** ---------------------------------------------------------------------------------------------------
   
   
   }
 
 endif;
-
-//========================================================================================================
-
-function myprefix_remove_meta_box(){
-
- remove_meta_box( RHSWP_CT_DOSSIER . 'div', array( 'page' ), 'normal');
-
-}
 
 //========================================================================================================
 

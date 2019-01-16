@@ -1,15 +1,15 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: ICTU / WP Register post types and taxonomies\n"
-"POT-Creation-Date: 2019-01-16 11:06+0100\n"
-"PO-Revision-Date: 2018-12-03 19:09+0100\n"
+"POT-Creation-Date: 2019-01-16 11:10+0100\n"
+"PO-Revision-Date: 2019-01-16 11:10+0100\n"
 "Last-Translator: Paul van Buuren <paul@wbvb.nl>\n"
 "Language-Team: Paul van Buuren <paul@wbvb.nl>\n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: rhswp-register_taxonomies.php:131 rhswp-register_taxonomies.php:136
-#: rhswp-register_taxonomies.php:138
+#: rhswp-register_taxonomies.php:138 rhswp-register_taxonomies.php:158
 msgctxt "Dossier"
 msgid "Topics"
 msgstr ""
@@ -79,22 +79,17 @@ msgstr ""
 
 #: rhswp-register_taxonomies.php:149 rhswp-register_taxonomies.php:192
 #: rhswp-register_taxonomies.php:230 rhswp-register_taxonomies.php:272
-msgid "Overzichten"
+msgid "Archives"
 msgstr ""
 
 #: rhswp-register_taxonomies.php:150 rhswp-register_taxonomies.php:193
 #: rhswp-register_taxonomies.php:231 rhswp-register_taxonomies.php:273
-msgid "Bijbehorende bestanden"
+msgid "Uploaded media"
 msgstr ""
 
 #: rhswp-register_taxonomies.php:154
 msgctxt "Dossiers label"
-msgid "Dossiers"
-msgstr ""
-
-#: rhswp-register_taxonomies.php:158
-msgctxt "Dossier"
-msgid "Dossiers"
+msgid "Topics"
 msgstr ""
 
 #: rhswp-register_taxonomies.php:174 rhswp-register_taxonomies.php:201
@@ -315,3 +310,11 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://wbvb.nl/"
 msgstr ""
+
+#~ msgctxt "Dossiers label"
+#~ msgid "Dossiers"
+#~ msgstr "Dossiers"
+
+#~ msgctxt "Dossier"
+#~ msgid "Dossiers"
+#~ msgstr "Dossiers"
