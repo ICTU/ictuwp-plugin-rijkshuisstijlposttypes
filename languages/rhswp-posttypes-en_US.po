@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ICTU / WP Register post types and taxonomies\n"
-"POT-Creation-Date: 2019-01-16 11:10+0100\n"
-"PO-Revision-Date: 2019-01-16 11:10+0100\n"
+"POT-Creation-Date: 2019-01-22 16:16+0100\n"
+"PO-Revision-Date: 2019-01-22 16:16+0100\n"
 "Last-Translator: Paul van Buuren <paul@wbvb.nl>\n"
 "Language-Team: Paul van Buuren <paul@wbvb.nl>\n"
 "Language: nl_NL\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: rhswp-register_taxonomies.php\n"
@@ -174,47 +174,42 @@ msgstr ""
 
 #: rhswp-register_taxonomies.php:220
 msgctxt "document type"
-msgid "Alle documenten"
+msgid "All documents"
 msgstr ""
 
-#: rhswp-register_taxonomies.php:221
+#: rhswp-register_taxonomies.php:221 rhswp-register_taxonomies.php:222
 msgctxt "document type"
-msgid "Nieuw document toevoegen"
-msgstr ""
-
-#: rhswp-register_taxonomies.php:222
-msgctxt "document type"
-msgid "Voeg nieuw document toe"
+msgid "Add new document"
 msgstr ""
 
 #: rhswp-register_taxonomies.php:223
 msgctxt "document type"
-msgid "Bewerk document"
+msgid "Edit document"
 msgstr ""
 
 #: rhswp-register_taxonomies.php:224
 msgctxt "document type"
-msgid "Nieuw document"
+msgid "New document"
 msgstr ""
 
 #: rhswp-register_taxonomies.php:225
 msgctxt "document type"
-msgid "Bekijk document"
+msgid "View document"
 msgstr ""
 
 #: rhswp-register_taxonomies.php:226
 msgctxt "document type"
-msgid "Zoek document"
+msgid "Search document"
 msgstr ""
 
 #: rhswp-register_taxonomies.php:227
 msgctxt "document type"
-msgid "Geen documenten gevonden"
+msgid "No documents found"
 msgstr ""
 
 #: rhswp-register_taxonomies.php:228
 msgctxt "document type"
-msgid "Geen documenten gevonden in de prullenbak"
+msgid "No documents found in trash"
 msgstr ""
 
 #: rhswp-register_taxonomies.php:235
@@ -300,7 +295,9 @@ msgid ""
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Voor het registeren van custom post types en taxonomieën."
+msgid ""
+"Plugin for digitaleoverheid.nl to register custom post types and custom "
+"taxonomies"
 msgstr ""
 
 #. Author of the plugin/theme

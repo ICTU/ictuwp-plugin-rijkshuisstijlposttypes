@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ICTU / WP Register post types and taxonomies\n"
-"POT-Creation-Date: 2019-01-16 11:18+0100\n"
-"PO-Revision-Date: 2019-01-16 11:19+0100\n"
+"POT-Creation-Date: 2019-01-22 16:16+0100\n"
+"PO-Revision-Date: 2019-01-22 16:16+0100\n"
 "Last-Translator: Paul van Buuren <paul@wbvb.nl>\n"
 "Language-Team: Paul van Buuren <paul@wbvb.nl>\n"
 "Language: nl_NL\n"
@@ -10,14 +10,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: rhswp-register_taxonomies.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -290,8 +290,8 @@ msgstr "ICTU / WP Custom post types & custom taxonomieën"
 
 #. Plugin URI of the plugin/theme
 msgid ""
-"https://github.com/ICTU/Digitale-Overheid---WordPress-Custom-Post-Types-"
-"and-Taxonomies"
+"https://github.com/ICTU/Digitale-Overheid---WordPress-Custom-Post-Types-and-"
+"Taxonomies"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -299,8 +299,8 @@ msgid ""
 "Plugin for digitaleoverheid.nl to register custom post types and custom "
 "taxonomies"
 msgstr ""
-"Plugin voor digitaleoverheid.nl voor het registeren van custom post types "
-"en taxonomieën"
+"Plugin voor digitaleoverheid.nl voor het registeren van custom post types en "
+"taxonomieën"
 
 #. Author of the plugin/theme
 msgid "Paul van Buuren"
@@ -309,6 +309,26 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://wbvb.nl/"
 msgstr ""
+
+#~ msgctxt "Dossier"
+#~ msgid "Topics (5)"
+#~ msgstr "Topics (5)"
+
+#~ msgctxt "Dossier"
+#~ msgid "Topics (4)"
+#~ msgstr "Topics (4)"
+
+#~ msgctxt "Dossier"
+#~ msgid "Topics (3)"
+#~ msgstr "Topics (3)"
+
+#~ msgctxt "Dossiers label"
+#~ msgid "Topics (1)"
+#~ msgstr "Topics (1)"
+
+#~ msgctxt "Dossier"
+#~ msgid "Topics (2)"
+#~ msgstr "Topics (2)"
 
 #~ msgctxt "document type"
 #~ msgid "Add new document in trash"
