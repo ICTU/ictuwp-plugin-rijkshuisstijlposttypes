@@ -20,6 +20,29 @@ rm '/shared-paul-files/Webs/temp/distribute.sh'
 rm '/shared-paul-files/Webs/temp/README.md'
 rm '/shared-paul-files/Webs/temp/LICENSE'
 
+
+# --------------------------------------------------------------------------------------------------------------------------------
+# Vertalingen --------------------------------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------------------------------------------
+# remove the .pot
+rm '/shared-paul-files/Webs/temp/languages/rhswp-posttypes.pot'
+
+# copy files to /wp-content/languages/themes
+rsync -ah '/shared-paul-files/Webs/temp/languages/' '/shared-paul-files/Webs/ICTU/Gebruiker Centraal/development/wp-content/languages/plugins/'
+
+# languages erics server
+rsync -ah '/shared-paul-files/Webs/temp/languages/' '/shared-paul-files/Webs/ICTU/Gebruiker Centraal/live-dutchlogic/wp-content/languages/plugins/'
+
+# languages Sentia accept
+rsync -ah '/shared-paul-files/Webs/temp/languages/' '/shared-paul-files/Webs/ICTU/Gebruiker Centraal/sentia/accept/www/wp-content/languages/plugins/'
+
+# languages Sentia live
+rsync -ah '/shared-paul-files/Webs/temp/languages/' '/shared-paul-files/Webs/ICTU/Gebruiker Centraal/sentia/live/www/wp-content/languages/plugins/'
+
+
+
+
+
 cd '/shared-paul-files/Webs/temp/'
 find . -name ‘*.DS_Store’ -type f -delete
 
