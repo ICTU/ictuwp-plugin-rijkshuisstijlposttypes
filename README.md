@@ -15,7 +15,7 @@ Aanleiding voor het scheiden van theme en definitie van CPT / CT is het opzetten
 ### Custom Taxonomies:
 
 * dossier, gedefinieerd via RHSWP_CT_DOSSIER
-* digitaleagenda, gedefinieerd via RHSWP_CT_DIGIBETER
+* beleidsterreinen, gedefinieerd via RHSWP_CT_DIGIBETER
 
 ## Contact
 * Pim Nieuwenburg

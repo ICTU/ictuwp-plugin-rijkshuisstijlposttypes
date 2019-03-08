@@ -33,7 +33,7 @@ if ( ! defined( 'RHSWP_CT_DOSSIER' ) ) {
 }
 
 if ( ! defined( 'RHSWP_CT_DIGIBETER' ) ) {
-  define( 'RHSWP_CT_DIGIBETER',             'digitaleagenda' );   // custom taxonomy for digitale agenda
+  define( 'RHSWP_CT_DIGIBETER',             'beleidsterreinen' );   // custom taxonomy for digitale agenda
 }
 
 if ( ! defined( 'RHSWP_CPT_DOCUMENT' ) ) {
@@ -164,7 +164,7 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
     		"show_admin_column"   => false,
     		"show_in_rest"        => false,
     		"rest_base"           => "",
-    		"show_in_quick_edit"  => false,
+    		"show_in_quick_edit"  => true,
     	);
     	register_taxonomy( RHSWP_CT_DOSSIER, array( "post", "page", "links", 'event', "document" ), $args );
 
@@ -176,9 +176,9 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
     		);
     
     	$labels = array(
-    		"name"                  => _x( 'Digibeter-kleuren', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"singular_name"         => _x( 'Digibeter-kleur', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"menu_name"             => _x( 'Digibeter-kleuren', 'digibeterkleuren', 'rhswp-posttypes' ),
+    		"name"                  => _x( 'Beleidskleuren', 'digibeterkleuren', 'rhswp-posttypes' ),
+    		"singular_name"         => _x( 'Beleidskleur', 'digibeterkleuren', 'rhswp-posttypes' ),
+    		"menu_name"             => _x( 'Beleidskleuren', 'digibeterkleuren', 'rhswp-posttypes' ),
     		"all_items"             => _x( 'Alle kleuren', 'digibeterkleuren', 'rhswp-posttypes' ),
     		"add_new"               => _x( 'Nieuw onderdeel toevoegen', 'digibeterkleuren', 'rhswp-posttypes' ),
     		"add_new_item"          => _x( 'Voeg nieuw onderdeel toe', 'digibeterkleuren', 'rhswp-posttypes' ),
@@ -207,7 +207,7 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
     		"show_admin_column"   => false,
     		"show_in_rest"        => false,
     		"rest_base"           => "",
-    		"show_in_quick_edit"  => false,
+    		"show_in_quick_edit"  => true,
     	);
     	register_taxonomy( RHSWP_CT_DIGIBETER, array( "page" ), $args );
 
