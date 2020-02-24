@@ -2,7 +2,7 @@
 
 /**
  * @link              https://wbvb.nl
- * @package           rhswp-posttypes
+ * @package           ictuwp-plugin-rijkshuisstijlposttypes
  *
  * @wordpress-plugin
  * Plugin Name:       ICTU / WP Register post types and taxonomies
