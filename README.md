@@ -11,6 +11,7 @@ Aanleiding voor het scheiden van theme en definitie van CPT / CT is het opzetten
 
 * document, gedefinieerd via RHSWP_CPT_DOCUMENT
 * slidertje, gedefinieerd via RHSWP_CPT_SLIDER
+* externeverwijzing, gedefinieerd via RHSWP_CPT_VERWIJZING
 
 ### Custom Taxonomies:
 
@@ -25,9 +26,10 @@ Aanleiding voor het scheiden van theme en definitie van CPT / CT is het opzetten
 * Maak slug voor CPT / CT ook vertaalbaar
 
 ## Current version:
-* 2.0.1 - Added translation file. Default language now English.
+* 3.0.1 - 'externeverwijzing' (RHSWP_CPT_VERWIJZING) added as custom post type
 
 ## Version history
+* 3.0.1 - 'externeverwijzing' (RHSWP_CPT_VERWIJZING) added as custom post type
 * 2.0.1 - Added translation file. Default language now English.
 * 1.0.1 - More code transfer from theme files.
 * 1.0.0 - First set up of plugin files.

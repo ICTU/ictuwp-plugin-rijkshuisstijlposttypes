@@ -2,18 +2,18 @@
 
 /**
  * @link              https://wbvb.nl
- * @package           ictuwp-plugin-rijkshuisstijlposttypes
+ * @package           ictuwp-plugin-ictuwp-plugin-rijkshuisstijlposttypes
  *
  * @wordpress-plugin
- * Plugin Name:       ICTU / WP Register post types and taxonomies
+ * Plugin Name:       ICTU / WP / DO Register post types and taxonomies
  * Plugin URI:        https://github.com/ICTU/Digitale-Overheid---WordPress-Custom-Post-Types-and-Taxonomies
  * Description:       Plugin for digitaleoverheid.nl to register custom post types and custom taxonomies
- * Version:           2.0.1
+ * Version:           3.0.1
  * Author:            Paul van Buuren
  * Author URI:        https://wbvb.nl/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       rhswp-posttypes
+ * Text Domain:       ictuwp-plugin-rijkshuisstijlposttypes
  * Domain Path:       /languages
  */
 
@@ -44,6 +44,11 @@ if ( ! defined( 'RHSWP_CPT_SLIDER' ) ) {
   define( 'RHSWP_CPT_SLIDER',               'slidertje' );  // slug for custom taxonomy 'dossier'
 }
 
+// @since 3.0.1
+if ( ! defined( 'RHSWP_CPT_VERWIJZING' ) ) {
+  define( 'RHSWP_CPT_VERWIJZING',             'externeverwijzing' ); 
+}
+
 //========================================================================================================
 // constants for rewrite rules
 
@@ -69,9 +74,10 @@ if ( ! defined( 'RHSWP_DOSSIERDOCUMENTCONTEXT' ) ) {
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    2.0.1
+ * @since    3.0.1
  */
 
+//    	die('Translate folder hiero: ' . dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 
@@ -105,9 +111,9 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
      */
     private function setup_actions() {
 
-      add_action( 'init', array( $this, 'register_post_type' ) );
-      add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
-      add_action( 'init', array( $this, 'rhswp_dossiercontext_add_rewrite_rules' ) );
+		add_action( 'init', array( $this, 'register_post_type' ) );
+		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+		add_action( 'init', array( $this, 'rhswp_dossiercontext_add_rewrite_rules' ) );
 
     }
   
@@ -116,7 +122,7 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
      */
     public function load_plugin_textdomain() {
 
-      load_plugin_textdomain( "rhswp-posttypes", false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+      load_plugin_textdomain( 'ictuwp-plugin-rijkshuisstijlposttypes', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
     }
 
@@ -128,34 +134,34 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
       // ---------------------------------------------------------------------------------------------------
       // dossier custom taxonomy
     	$labels = array(
-    		"name"                  => _x( 'Topics', 'Dossier', 'rhswp-posttypes' ),
-    		"singular_name"         => _x( 'Topic', 'Dossier', 'rhswp-posttypes' ),
+    		"name"                  => _x( 'Topics', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"singular_name"         => _x( 'Topic', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
     		);
     
     	$labels = array(
-    		"name"                  => _x( 'Topics', 'Dossier', 'rhswp-posttypes' ),
-    		"singular_name"         => _x( 'Topic', 'Dossier', 'rhswp-posttypes' ),
-    		"menu_name"             => _x( 'Topics', 'Dossier', 'rhswp-posttypes' ),
-    		"all_items"             => _x( 'All topics', 'Dossier', 'rhswp-posttypes' ),
-    		"add_new"               => _x( 'Add new topic', 'Dossier', 'rhswp-posttypes' ),
-    		"add_new_item"          => _x( 'Add new topic', 'Dossier', 'rhswp-posttypes' ),
-    		"edit_item"             => _x( 'Edit topic', 'Dossier', 'rhswp-posttypes' ),
-    		"new_item"              => _x( 'New topic', 'Dossier', 'rhswp-posttypes' ),
-    		"view_item"             => _x( 'View topic', 'Dossier', 'rhswp-posttypes' ),
-    		"search_items"          => _x( 'Search topic', 'Dossier', 'rhswp-posttypes' ),
-    		"not_found"             => _x( 'No topic found', 'Dossier', 'rhswp-posttypes' ),
-    		"not_found_in_trash"    => _x( 'No topic found in trash', 'Dossier', 'rhswp-posttypes' ),
-    		"featured_image"        => __( 'Featured image', 'rhswp-posttypes' ),
-    		"archives"              => __( 'Archives', 'rhswp-posttypes' ),
-    		"uploaded_to_this_item" => __( 'Uploaded media', 'rhswp-posttypes' ),
+    		"name"                  => _x( 'Topics', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"singular_name"         => _x( 'Topic', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"menu_name"             => _x( 'Topics', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"all_items"             => _x( 'All topics', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"add_new"               => _x( 'Add new topic', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"add_new_item"          => _x( 'Add new topic', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"edit_item"             => _x( 'Edit topic', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"new_item"              => _x( 'New topic', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"view_item"             => _x( 'View topic', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"search_items"          => _x( 'Search topic', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"not_found"             => _x( 'No topic found', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"not_found_in_trash"    => _x( 'No topic found in trash', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"featured_image"        => __( 'Featured image', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"archives"              => __( 'Archives', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"uploaded_to_this_item" => __( 'Uploaded media', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
     		);
   
     	$args = array(
-    		"label"                 => _x( 'Topics', 'Dossiers label', 'rhswp-posttypes' ),
+    		"label"                 => _x( 'Topics', 'Dossiers label', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
     		"labels"              => $labels,
     		"public"              => true,
     		"hierarchical"        => true,
-    		"label"                  => _x( 'Topics', 'Dossier', 'rhswp-posttypes' ),
+    		"label"                  => _x( 'Topics', 'Dossier', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
     		"show_ui"             => true,
     		"show_in_menu"        => true,
     		"show_in_nav_menus"   => true,
@@ -171,34 +177,34 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
       // ---------------------------------------------------------------------------------------------------
       // digitbeter kleuren custom taxonomy
     	$labels = array(
-    		"name"                  => _x( 'Onderdelen NL Digibeter', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"singular_name"         => _x( 'Onderdeel NL Digibeter', 'digibeterkleuren', 'rhswp-posttypes' )
+    		"name"                  => _x( 'Onderdelen NL Digibeter', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"singular_name"         => _x( 'Onderdeel NL Digibeter', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' )
     		);
     
     	$labels = array(
-    		"name"                  => _x( 'Digibeter-kleuren', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"singular_name"         => _x( 'Digibeter-kleur', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"menu_name"             => _x( 'Digibeter-kleuren', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"all_items"             => _x( 'Alle kleuren', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"add_new"               => _x( 'Nieuw onderdeel toevoegen', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"add_new_item"          => _x( 'Voeg nieuw onderdeel toe', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"edit_item"             => _x( 'Bewerk onderdeel', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"new_item"              => _x( 'Nieuw onderdeel', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"view_item"             => _x( 'Bekijk onderdeel', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"search_items"          => _x( 'Zoek onderdeel', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"not_found"             => _x( 'Geen onderdelen gevonden', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"not_found_in_trash"    => _x( 'Geen onderdelen gevonden in de prullenbak', 'digibeterkleuren', 'rhswp-posttypes' ),
-    		"featured_image"        => __( 'Featured image', 'rhswp-posttypes' ),
-    		"archives"              => __( 'Archives', 'rhswp-posttypes' ),
-    		"uploaded_to_this_item" => __( 'Uploaded media', 'rhswp-posttypes' ),
+    		"name"                  => _x( 'Digibeter-kleuren', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"singular_name"         => _x( 'Digibeter-kleur', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"menu_name"             => _x( 'Digibeter-kleuren', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"all_items"             => _x( 'Alle kleuren', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"add_new"               => _x( 'Nieuw onderdeel toevoegen', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"add_new_item"          => _x( 'Voeg nieuw onderdeel toe', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"edit_item"             => _x( 'Bewerk onderdeel', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"new_item"              => _x( 'Nieuw onderdeel', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"view_item"             => _x( 'Bekijk onderdeel', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"search_items"          => _x( 'Zoek onderdeel', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"not_found"             => _x( 'Geen onderdelen gevonden', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"not_found_in_trash"    => _x( 'Geen onderdelen gevonden in de prullenbak', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"featured_image"        => __( 'Featured image', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"archives"              => __( 'Archives', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"uploaded_to_this_item" => __( 'Uploaded media', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
     		);
 
     	$args = array(
-    		"label"                 => _x( 'Onderdelen NL Digibeter', 'Digibeter label', 'rhswp-posttypes' ),
+    		"label"                 => _x( 'Onderdelen NL Digibeter', 'Digibeter label', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
     		"labels"              => $labels,
     		"public"              => true,
     		"hierarchical"        => true,
-    		"label"                  => _x( 'Onderdelen NL Digibeter', 'digibeterkleuren', 'rhswp-posttypes' ),
+    		"label"                  => _x( 'Onderdelen NL Digibeter', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
     		"show_ui"             => true,
     		"show_in_menu"        => true,
     		"show_in_nav_menus"   => true,
@@ -214,25 +220,25 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
       // ---------------------------------------------------------------------------------------------------
       // documenten custom post type
     	$labels = array(
-    		"name"                  => _x( 'Documents', 'document type', 'rhswp-posttypes' ),
-    		"singular_name"         => _x( 'Document', 'document type', 'rhswp-posttypes' ),
-    		"menu_name"             => _x( 'Documents', 'document type', 'rhswp-posttypes' ),
-    		"all_items"             => _x( 'All documents', 'document type', 'rhswp-posttypes' ),
-    		"add_new"               => _x( 'Add new document', 'document type', 'rhswp-posttypes' ),
-    		"add_new_item"          => _x( 'Add new document', 'document type', 'rhswp-posttypes' ),
-    		"edit_item"             => _x( 'Edit document', 'document type', 'rhswp-posttypes' ),
-    		"new_item"              => _x( 'New document', 'document type', 'rhswp-posttypes' ),
-    		"view_item"             => _x( 'View document', 'document type', 'rhswp-posttypes' ),
-    		"search_items"          => _x( 'Search document', 'document type', 'rhswp-posttypes' ),
-    		"not_found"             => _x( 'No documents found', 'document type', 'rhswp-posttypes' ),
-    		"not_found_in_trash"    => _x( 'No documents found in trash', 'document type', 'rhswp-posttypes' ),
-    		"featured_image"        => __( 'Featured image', 'rhswp-posttypes' ),
-    		"archives"              => __( 'Archives', 'rhswp-posttypes' ),
-    		"uploaded_to_this_item" => __( 'Uploaded media', 'rhswp-posttypes' ),
+    		"name"                  => _x( 'Documents', 'document type', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"singular_name"         => _x( 'Document', 'document type', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"menu_name"             => _x( 'Documents', 'document type', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"all_items"             => _x( 'All documents', 'document type', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"add_new"               => _x( 'Add new document', 'document type', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"add_new_item"          => _x( 'Add new document', 'document type', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"edit_item"             => _x( 'Edit document', 'document type', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"new_item"              => _x( 'New document', 'document type', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"view_item"             => _x( 'View document', 'document type', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"search_items"          => _x( 'Search document', 'document type', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"not_found"             => _x( 'No documents found', 'document type', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"not_found_in_trash"    => _x( 'No documents found in trash', 'document type', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"featured_image"        => __( 'Featured image', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"archives"              => __( 'Archives', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"uploaded_to_this_item" => __( 'Uploaded media', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
     		);
     
     	$args = array(
-    		"label"                 => _x( 'Documents', 'Documents label', 'rhswp-posttypes' ),
+    		"label"                 => _x( 'Documents', 'Documents label', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
     		"labels"              => $labels,
     		"description"         => "",
     		"public"              => true,
@@ -256,27 +262,27 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
       // ---------------------------------------------------------------------------------------------------
       // Carrousels custom post type
     	$labels = array(
-    		"name"                  => _x( 'Carrousels', 'caroussel', 'rhswp-posttypes' ),
-    		"singular_name"         => _x( 'Carrousel', 'caroussel', 'rhswp-posttypes' ),
-    		"menu_name"             => _x( 'Carrousels', 'caroussel', 'rhswp-posttypes' ),
-    		"all_items"             => _x( 'Alle carrousels', 'caroussel', 'rhswp-posttypes' ),
-    		"add_new"               => _x( 'Nieuwe carrousel toevoegen', 'caroussel', 'rhswp-posttypes' ),
-    		"add_new_item"          => _x( 'Voeg nieuwe carrousel toe', 'caroussel', 'rhswp-posttypes' ),
-    		"edit_item"             => _x( 'Bewerk carrousel', 'caroussel', 'rhswp-posttypes' ),
-    		"new_item"              => _x( 'Nieuwe carrousel', 'caroussel', 'rhswp-posttypes' ),
-    		"view_item"             => _x( 'Bekijk carrousel', 'caroussel', 'rhswp-posttypes' ),
-    		"search_items"          => _x( 'Zoek carrousel', 'caroussel', 'rhswp-posttypes' ),
-    		"not_found"             => _x( 'Geen carrousels gevonden', 'caroussel', 'rhswp-posttypes' ),
-    		"not_found_in_trash"    => _x( 'Geen carrousels gevonden in de prullenbak', 'caroussel', 'rhswp-posttypes' ),
-    		"featured_image"        => __( 'Featured image', 'rhswp-posttypes' ),
-    		"archives"              => __( 'Archives', 'rhswp-posttypes' ),
-    		"uploaded_to_this_item" => __( 'Uploaded media', 'rhswp-posttypes' ),
+    		"name"                  => _x( 'Carrousels', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"singular_name"         => _x( 'Carrousel', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"menu_name"             => _x( 'Carrousels', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"all_items"             => _x( 'Alle carrousels', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"add_new"               => _x( 'Nieuwe carrousel toevoegen', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"add_new_item"          => _x( 'Voeg nieuwe carrousel toe', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"edit_item"             => _x( 'Bewerk carrousel', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"new_item"              => _x( 'Nieuwe carrousel', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"view_item"             => _x( 'Bekijk carrousel', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"search_items"          => _x( 'Zoek carrousel', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"not_found"             => _x( 'Geen carrousels gevonden', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"not_found_in_trash"    => _x( 'Geen carrousels gevonden in de prullenbak', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"featured_image"        => __( 'Featured image', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"archives"              => __( 'Archives', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+    		"uploaded_to_this_item" => __( 'Uploaded media', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
     		);
     
     	$args = array(
-    		"label"                 => _x( 'Carrousels', 'Carrousels label', 'rhswp-posttypes' ),
+    		"label"                 => _x( 'Carrousels', 'Carrousels label', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
     		"labels"                => $labels,
-    		"description"           => _x( "Foto\'s en links. Toe te voegen aan pagina\'s en taxonomieen op Digitale Overheid", 'Carrousels description', 'rhswp-posttypes' ), 
+    		"description"           => _x( "Foto\'s en links. Toe te voegen aan pagina\'s en taxonomieen op Digitale Overheid", 'Carrousels description', 'ictuwp-plugin-rijkshuisstijlposttypes' ), 
     		"public"                => true,
     		"publicly_queryable"    => false,
     		"show_ui"               => true,
@@ -293,10 +299,122 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
     		"supports"              => array( "title", "excerpt", "revisions" ),					);
     	register_post_type( RHSWP_CPT_SLIDER, $args );
   
-    
-      // ---------------------------------------------------------------------------------------------------
-      // clean up after ourselves
-    	flush_rewrite_rules();
+
+
+		// ---------------------------------------------------------------------------------------------------
+		// Externe verwijzing
+		// @since 3.0.1
+		$labels = array(
+			"name"                  => _x( 'Verwijzingen', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"singular_name"         => _x( 'Verwijzing', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"menu_name"             => _x( 'Verwijzingen', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"all_items"             => _x( 'Alle verwijzingen', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"add_new"               => _x( 'Nieuwe verwijzing toevoegen', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"add_new_item"          => _x( 'Nieuwe verwijzing toevoegen', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"edit_item"             => _x( 'Bewerk verwijzing', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"new_item"              => _x( 'Nieuwe verwijzing', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"view_item"             => _x( 'Bekijk verwijzing', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"search_items"          => _x( 'Zoek verwijzing', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"not_found"             => _x( 'Geen verwijzingen gevonden', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"not_found_in_trash"    => _x( 'Geen verwijzingen gevonden', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"featured_image"        => __( 'Featured image', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"archives"              => __( 'Archives', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"uploaded_to_this_item" => __( 'Uploaded media', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+		);
+		
+		$args = array(
+			"label"               => _x( 'Verwijzing', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
+			"labels"              => $labels,
+			"description"         => "",
+			"public"              => false,
+			"publicly_queryable"  => false,
+			"show_ui"             => true,
+			"show_in_rest"        => false,
+			"rest_base"           => "",
+			"has_archive"         => false,
+			"show_in_menu"        => true,
+			"exclude_from_search" => false,
+			"capability_type"     => "post",
+			"map_meta_cap"        => true,
+			"hierarchical"        => false,
+			"rewrite"             => array( "slug" => RHSWP_CPT_VERWIJZING, "with_front" => true ),
+			"query_var"           => true,
+			"supports"            => array( "title", "editor", "thumbnail" ),		
+		);
+		
+		register_post_type( RHSWP_CPT_VERWIJZING, $args );
+
+		// Extra ACF velden 
+		if( function_exists('acf_add_local_field_group') ):
+			
+			acf_add_local_field_group(array(
+				'key' => 'group_5ebc14c5d080f',
+				'title' => 'URL en citaat bij deze verwijzing',
+				'fields' => array(
+					array(
+						'key' => 'field_5ebc176381bfd',
+						'label' => 'Link',
+						'name' => 'verwijzing_url',
+						'type' => 'text',
+						'instructions' => 'Voer de volledige URL in voor je verwijzing.	Voorbeeld:
+			https://www.gebruikercentraal.nl/category/blog/',
+						'required' => 1,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'maxlength' => '',
+					),
+					array(
+						'key' => 'field_5ebc14df0d0c8',
+						'label' => 'Citaat',
+						'name' => 'verwijzing_citaat',
+						'type' => 'textarea',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'placeholder' => '',
+						'maxlength' => 400,
+						'rows' => 2,
+						'new_lines' => '',
+					),
+				),
+				'location' => array(
+					array(
+						array(
+							'param' => 'post_type',
+							'operator' => '==',
+							'value' => RHSWP_CPT_VERWIJZING,
+						),
+					),
+				),
+				'menu_order' => 0,
+				'position' => 'normal',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => '',
+				'active' => true,
+				'description' => '',
+			));
+			
+		endif;		
+		
+		// ---------------------------------------------------------------------------------------------------
+		// clean up after ourselves
+		flush_rewrite_rules();
   
     }
 
