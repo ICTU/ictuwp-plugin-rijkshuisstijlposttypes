@@ -112,7 +112,7 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
     private function setup_actions() {
 
 		add_action( 'init', array( $this, 'register_post_type' ) );
-		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+//		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 		add_action( 'init', array( $this, 'rhswp_dossiercontext_add_rewrite_rules' ) );
 
     }
@@ -339,12 +339,11 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 			"hierarchical"        => false,
 			"rewrite"             => array( "slug" => RHSWP_CPT_VERWIJZING, "with_front" => true ),
 			"query_var"           => true,
-			"supports"            => array( "title", "editor", "thumbnail" ),		
+			"supports"            => array( "title", "thumbnail" ),		
 		);
 		
 		register_post_type( RHSWP_CPT_VERWIJZING, $args );
 
-		// Extra ACF velden 
 		if( function_exists('acf_add_local_field_group') ):
 			
 			acf_add_local_field_group(array(
@@ -352,31 +351,13 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 				'title' => 'URL en citaat bij deze verwijzing',
 				'fields' => array(
 					array(
-						'key' => 'field_5ebc176381bfd',
-						'label' => 'Link',
-						'name' => 'verwijzing_url',
-						'type' => 'text',
-						'instructions' => 'Voer de volledige URL in voor je verwijzing.	Voorbeeld:
-			https://www.gebruikercentraal.nl/category/blog/',
-						'required' => 1,
-						'conditional_logic' => 0,
-						'wrapper' => array(
-							'width' => '',
-							'class' => '',
-							'id' => '',
-						),
-						'default_value' => '',
-						'placeholder' => '',
-						'prepend' => '',
-						'append' => '',
-						'maxlength' => '',
-					),
-					array(
-						'key' => 'field_5ebc14df0d0c8',
-						'label' => 'Citaat',
-						'name' => 'verwijzing_citaat',
-						'type' => 'textarea',
-						'instructions' => '',
+						'key' => 'field_5ebd4763dbe21',
+						'label' => 'Citaat of verwijzing',
+						'name' => 'citaat_of_verwijzing',
+						'type' => 'radio',
+						'instructions' => 'Zowel bij een verwijzing als citaat voeg je een foto toe. Bij beide voeg je ook een link en linktekst toe.
+			Een verwijzing bevat een tekst van meerdere regels.
+			Een citaat daarentegen is kort en heeft een auteur.',
 						'required' => 0,
 						'conditional_logic' => 0,
 						'wrapper' => array(
@@ -384,11 +365,121 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 							'class' => '',
 							'id' => '',
 						),
+						'choices' => array(
+							'citaat_of_verwijzing_verwijzing' => 'Verwijzing',
+							'citaat_of_verwijzing_citaat' => 'Citaat',
+						),
+						'allow_null' => 0,
+						'other_choice' => 0,
+						'default_value' => 'citaat_of_verwijzing_verwijzing',
+						'layout' => 'vertical',
+						'return_format' => 'value',
+						'save_other_choice' => 0,
+					),
+					array(
+						'key' => 'field_5ebd4836470c7',
+						'label' => 'Citaat en auteur',
+						'name' => 'citaat_en_auteur',
+						'type' => 'group',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => array(
+							array(
+								array(
+									'field' => 'field_5ebd4763dbe21',
+									'operator' => '==',
+									'value' => 'citaat_of_verwijzing_citaat',
+								),
+							),
+						),
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'layout' => 'row',
+						'sub_fields' => array(
+							array(
+								'key' => 'field_5ebc14df0d0c8',
+								'label' => 'Citaat',
+								'name' => 'verwijzing_citaat',
+								'type' => 'textarea',
+								'instructions' => '',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'placeholder' => '',
+								'maxlength' => 400,
+								'rows' => 2,
+								'new_lines' => '',
+							),
+							array(
+								'key' => 'field_5ebd48a1a5185',
+								'label' => 'Auteur',
+								'name' => 'verwijzing_citaat_auteur',
+								'type' => 'text',
+								'instructions' => '',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'placeholder' => '',
+								'prepend' => '',
+								'append' => '',
+								'maxlength' => '',
+							),
+						),
+					),
+					array(
+						'key' => 'field_5ebc176381bfd',
+						'label' => 'Beschrijving',
+						'name' => 'verwijzing_beschrijving',
+						'type' => 'textarea',
+						'instructions' => '',
+						'required' => 1,
+						'conditional_logic' => array(
+							array(
+								array(
+									'field' => 'field_5ebd4763dbe21',
+									'operator' => '==',
+									'value' => 'citaat_of_verwijzing_verwijzing',
+								),
+							),
+						),
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
 						'default_value' => '',
 						'placeholder' => '',
-						'maxlength' => 400,
-						'rows' => 2,
+						'maxlength' => '',
+						'rows' => '',
 						'new_lines' => '',
+					),
+					array(
+						'key' => 'field_5ebd457d97efa',
+						'label' => 'Link',
+						'name' => 'verwijzing_url',
+						'type' => 'link',
+						'instructions' => '',
+						'required' => 1,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'return_format' => 'array',
 					),
 				),
 				'location' => array(
@@ -410,7 +501,7 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 				'description' => '',
 			));
 			
-		endif;		
+		endif;
 		
 		// ---------------------------------------------------------------------------------------------------
 		// clean up after ourselves
