@@ -8,7 +8,7 @@
  * Plugin Name:       ICTU / WP / DO Register post types and taxonomies
  * Plugin URI:        https://github.com/ICTU/Digitale-Overheid---WordPress-Custom-Post-Types-and-Taxonomies
  * Description:       Plugin for digitaleoverheid.nl to register custom post types and custom taxonomies
- * Version:           3.0.1
+ * Version:           3.0.2
  * Author:            Paul van Buuren
  * Author URI:        https://wbvb.nl/
  * License:           GPL-2.0+
@@ -33,7 +33,7 @@ if ( ! defined( 'RHSWP_CT_DOSSIER' ) ) {
 }
 
 if ( ! defined( 'RHSWP_CT_DIGIBETER' ) ) {
-  define( 'RHSWP_CT_DIGIBETER',             'digitaleagenda' );   // custom taxonomy for digitale agenda
+	define( 'RHSWP_CT_DIGIBETER',             'beleidsterreinen' );   // custom taxonomy for digitale agenda
 }
 
 if ( ! defined( 'RHSWP_CPT_DOCUMENT' ) ) {
@@ -44,7 +44,7 @@ if ( ! defined( 'RHSWP_CPT_SLIDER' ) ) {
   define( 'RHSWP_CPT_SLIDER',               'slidertje' );  // slug for custom taxonomy 'dossier'
 }
 
-// @since 3.0.1
+// @since 3.0.2
 if ( ! defined( 'RHSWP_CPT_VERWIJZING' ) ) {
   define( 'RHSWP_CPT_VERWIJZING',             'externeverwijzing' ); 
 }
@@ -74,7 +74,7 @@ if ( ! defined( 'RHSWP_DOSSIERDOCUMENTCONTEXT' ) ) {
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    3.0.1
+ * @since    3.0.2
  */
 
 //    	die('Translate folder hiero: ' . dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
@@ -303,7 +303,7 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 
 		// ---------------------------------------------------------------------------------------------------
 		// Externe verwijzing
-		// @since 3.0.1
+		// @since 3.0.2
 		$labels = array(
 			"name"                  => _x( 'Verwijzingen', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
 			"singular_name"         => _x( 'Verwijzing', 'CPT verwijzing', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
