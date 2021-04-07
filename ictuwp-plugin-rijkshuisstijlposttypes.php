@@ -8,7 +8,7 @@
  * Plugin Name:       ICTU / WP / DO Register post types and taxonomies
  * Plugin URI:        https://github.com/ICTU/Digitale-Overheid---WordPress-Custom-Post-Types-and-Taxonomies
  * Description:       Plugin for digitaleoverheid.nl to register custom post types and custom taxonomies
- * Version:           3.0.2
+ * Version:           3.0.3.a
  * Author:            Paul van Buuren
  * Author URI:        https://wbvb.nl/
  * License:           GPL-2.0+
@@ -63,6 +63,21 @@ if ( ! defined( 'RHSWP_DOSSIEREVENTCONTEXT' ) ) {
 if ( ! defined( 'RHSWP_DOSSIERDOCUMENTCONTEXT' ) ) {
 	define( 'RHSWP_DOSSIERDOCUMENTCONTEXT', 'dossierdocumentcontext' );
 }
+
+// @since 3.0.3.a
+if ( ! defined( 'RHSWP_DOSSIERCONTEXTPOSTOVERVIEW' ) ) {
+	define( 'RHSWP_DOSSIERCONTEXTPOSTOVERVIEW', 'dossier-berichten' );
+}
+if ( ! defined( 'RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW' ) ) {
+	define( 'RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW', 'dossier-categorie' );
+}
+if ( ! defined( 'RHSWP_DOSSIERCONTEXTEVENTOVERVIEW' ) ) {
+	define( 'RHSWP_DOSSIERCONTEXTEVENTOVERVIEW', 'dossier-events' );
+}
+if ( ! defined( 'RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW' ) ) {
+	define( 'RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW', 'dossier-documenten' );
+}
+
 
 //========================================================================================================
 
@@ -544,6 +559,10 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 
 			// documents overview without paging
 			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top' );
+
+
+			// single document in context of dossier
+			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/([^/]*)/?$', 'index.php?' . RHSWP_CPT_DOCUMENT . '=$matches[2]&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top' );
 
 
 			// posts overview for category with paging
