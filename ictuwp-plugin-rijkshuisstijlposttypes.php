@@ -15,6 +15,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       ictuwp-plugin-rijkshuisstijlposttypes
  * Domain Path:       /languages
+ *
  */
 
 // If this file is called directly, abort.
@@ -92,8 +93,6 @@ if ( ! defined( 'RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW' ) ) {
  * @since    3.0.2
  */
 
-//    	die('Translate folder hiero: ' . dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-
 if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 
 	class RHSWP_Register_taxonomies {
@@ -127,17 +126,8 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 		private function setup_actions() {
 
 			add_action( 'init', array( $this, 'register_post_type' ) );
-//		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+			add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
 			add_action( 'init', array( $this, 'rhswp_dossiercontext_add_rewrite_rules' ) );
-
-		}
-
-		/** ----------------------------------------------------------------------------------------------------
-		 * Initialise translations
-		 */
-		public function load_plugin_textdomain() {
-
-			load_plugin_textdomain( 'ictuwp-plugin-rijkshuisstijlposttypes', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 		}
 
@@ -569,11 +559,8 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 //			http://appeltaart.local:5757/dossiers/leer-en-expertisepunt-datagedreven-werken/dossier-berichten/dossier-categorie/achtergrondartikelen/data-agenda-overheid-2020-focust-op-beter-gebruik-van-data/
 
 			// Voor een document
-			http://appeltaart.local:5757/dossiers/leer-en-expertisepunt-datagedreven-werken/dossier-documenten/wmk-toets-3/
+//			http://appeltaart.local:5757/dossiers/leer-en-expertisepunt-datagedreven-werken/dossier-documenten/wmk-toets-3/
 			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/([^/]*)/?$', 'index.php?' . RHSWP_CPT_DOCUMENT . '=$matches[2]&' . RHSWP_CT_DOSSIER . '=$matches[1]&pagename=' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW, 'top' );
-
-
-//			http://appeltaart.local:5757/evenementen/data-delen-zonder-controle-te-verliezen-2/
 
 			// posts overview for category with paging
 			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/(.+?)/page/([0-9]+)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]&category_slug=$matches[2]&paged=$matches[3]', 'top' );
@@ -606,4 +593,15 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 endif;
 
 //========================================================================================================
+
+/** ----------------------------------------------------------------------------------------------------
+ * Initialise translations
+ */
+function rijkshuisstijlposttypes_load_plugin_textdomain() {
+
+	load_plugin_textdomain( 'ictuwp-plugin-rijkshuisstijlposttypes', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+
+}
+
+add_action( 'plugins_loaded', 'rijkshuisstijlposttypes_load_plugin_textdomain' );
 
