@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ICTU / WP / DO Register post types and taxonomies\n"
-"POT-Creation-Date: 2020-05-13 19:01+0200\n"
-"PO-Revision-Date: 2020-05-13 19:01+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2021-06-03 17:13+0200\n"
+"PO-Revision-Date: 2021-06-03 17:13+0200\n"
+"Last-Translator: Paul van Buuren <poedit@wbvb.nl>\n"
 "Language-Team: \n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -21,332 +21,332 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:137
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:142
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:144
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:164
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:152
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:157
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:159
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:179
 msgctxt "Dossier"
 msgid "Topics"
 msgstr "Dossiers"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:138
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:143
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:153
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:158
 msgctxt "Dossier"
 msgid "Topic"
 msgstr "Dossier"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:145
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:160
 msgctxt "Dossier"
 msgid "All topics"
 msgstr "Alle dossiers"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:146
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:147
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:161
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:162
 msgctxt "Dossier"
 msgid "Add new topic"
 msgstr "Nieuw dossier toevoegen"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:148
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:163
 msgctxt "Dossier"
 msgid "Edit topic"
 msgstr "Dossier wijzigen"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:149
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:164
 msgctxt "Dossier"
 msgid "New topic"
 msgstr "Nieuw dossier"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:150
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:165
 msgctxt "Dossier"
 msgid "View topic"
 msgstr "Bekijk dossier"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:151
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:166
 msgctxt "Dossier"
 msgid "Search topic"
 msgstr "Zoek dossier"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:152
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:167
 msgctxt "Dossier"
 msgid "No topic found"
 msgstr "Geen dossier gevonden"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:153
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:168
 msgctxt "Dossier"
 msgid "No topic found in trash"
 msgstr "Geen dossier gevonden in de prullenbak"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:154
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:197
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:235
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:277
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:320
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:169
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:212
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:250
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:292
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:335
 msgid "Featured image"
 msgstr "Uitgelichte afbeelding"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:155
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:198
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:236
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:278
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:321
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:170
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:213
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:251
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:293
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:336
 msgid "Archives"
 msgstr "Overzichten"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:156
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:199
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:237
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:279
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:322
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:171
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:214
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:252
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:294
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:337
 msgid "Uploaded media"
 msgstr "Bijbehorende bestanden"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:160
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:175
 msgctxt "Dossiers label"
 msgid "Topics"
 msgstr "Dossiers"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:180
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:207
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:195
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:222
 msgctxt "digibeterkleuren"
 msgid "Onderdelen NL Digibeter"
-msgstr ""
-
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:181
-msgctxt "digibeterkleuren"
-msgid "Onderdeel NL Digibeter"
-msgstr ""
-
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:185
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:187
-msgctxt "digibeterkleuren"
-msgid "Digibeter-kleuren"
-msgstr ""
-
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:186
-msgctxt "digibeterkleuren"
-msgid "Digibeter-kleur"
-msgstr ""
-
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:188
-msgctxt "digibeterkleuren"
-msgid "Alle kleuren"
-msgstr ""
-
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:189
-msgctxt "digibeterkleuren"
-msgid "Nieuw onderdeel toevoegen"
-msgstr ""
-
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:190
-msgctxt "digibeterkleuren"
-msgid "Voeg nieuw onderdeel toe"
-msgstr ""
-
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:191
-msgctxt "digibeterkleuren"
-msgid "Bewerk onderdeel"
-msgstr ""
-
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:192
-msgctxt "digibeterkleuren"
-msgid "Nieuw onderdeel"
-msgstr ""
-
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:193
-msgctxt "digibeterkleuren"
-msgid "Bekijk onderdeel"
-msgstr ""
-
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:194
-msgctxt "digibeterkleuren"
-msgid "Zoek onderdeel"
-msgstr ""
-
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:195
-msgctxt "digibeterkleuren"
-msgid "Geen onderdelen gevonden"
 msgstr ""
 
 #: ictuwp-plugin-rijkshuisstijlposttypes.php:196
 msgctxt "digibeterkleuren"
-msgid "Geen onderdelen gevonden in de prullenbak"
+msgid "Onderdeel NL Digibeter"
+msgstr ""
+
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:200
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:202
+msgctxt "digibeterkleuren"
+msgid "Digibeter-kleuren"
+msgstr ""
+
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:201
+msgctxt "digibeterkleuren"
+msgid "Digibeter-kleur"
 msgstr ""
 
 #: ictuwp-plugin-rijkshuisstijlposttypes.php:203
+msgctxt "digibeterkleuren"
+msgid "Alle kleuren"
+msgstr ""
+
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:204
+msgctxt "digibeterkleuren"
+msgid "Nieuw onderdeel toevoegen"
+msgstr ""
+
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:205
+msgctxt "digibeterkleuren"
+msgid "Voeg nieuw onderdeel toe"
+msgstr ""
+
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:206
+msgctxt "digibeterkleuren"
+msgid "Bewerk onderdeel"
+msgstr ""
+
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:207
+msgctxt "digibeterkleuren"
+msgid "Nieuw onderdeel"
+msgstr ""
+
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:208
+msgctxt "digibeterkleuren"
+msgid "Bekijk onderdeel"
+msgstr ""
+
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:209
+msgctxt "digibeterkleuren"
+msgid "Zoek onderdeel"
+msgstr ""
+
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:210
+msgctxt "digibeterkleuren"
+msgid "Geen onderdelen gevonden"
+msgstr ""
+
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:211
+msgctxt "digibeterkleuren"
+msgid "Geen onderdelen gevonden in de prullenbak"
+msgstr ""
+
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:218
 msgctxt "Digibeter label"
 msgid "Onderdelen NL Digibeter"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:223
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:225
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:238
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:240
 msgctxt "document type"
 msgid "Documents"
 msgstr "Documenten"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:224
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:239
 msgctxt "document type"
 msgid "Document"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:226
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:241
 msgctxt "document type"
 msgid "All documents"
 msgstr "Alle documenten"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:227
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:228
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:242
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:243
 msgctxt "document type"
 msgid "Add new document"
 msgstr "Nieuw document toevoegen"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:229
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:244
 msgctxt "document type"
 msgid "Edit document"
 msgstr "Bewerk document"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:230
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:245
 msgctxt "document type"
 msgid "New document"
 msgstr "Nieuw document"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:231
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:246
 msgctxt "document type"
 msgid "View document"
 msgstr "Bekijk document"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:232
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:247
 msgctxt "document type"
 msgid "Search document"
 msgstr "Zoek document"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:233
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:248
 msgctxt "document type"
 msgid "No documents found"
 msgstr "Geen documenten gevonden"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:234
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:249
 msgctxt "document type"
 msgid "No documents found in trash"
 msgstr "Geen documenten gevonden"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:241
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:256
 msgctxt "Documents label"
 msgid "Documents"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:265
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:267
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:280
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:282
 msgctxt "caroussel"
 msgid "Carrousels"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:266
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:281
 msgctxt "caroussel"
 msgid "Carrousel"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:268
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:283
 msgctxt "caroussel"
 msgid "Alle carrousels"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:269
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:284
 msgctxt "caroussel"
 msgid "Nieuwe carrousel toevoegen"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:270
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:285
 msgctxt "caroussel"
 msgid "Voeg nieuwe carrousel toe"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:271
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:286
 msgctxt "caroussel"
 msgid "Bewerk carrousel"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:272
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:287
 msgctxt "caroussel"
 msgid "Nieuwe carrousel"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:273
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:288
 msgctxt "caroussel"
 msgid "Bekijk carrousel"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:274
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:289
 msgctxt "caroussel"
 msgid "Zoek carrousel"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:275
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:290
 msgctxt "caroussel"
 msgid "Geen carrousels gevonden"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:276
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:291
 msgctxt "caroussel"
 msgid "Geen carrousels gevonden in de prullenbak"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:283
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:298
 msgctxt "Carrousels label"
 msgid "Carrousels"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:285
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:300
 msgctxt "Carrousels description"
 msgid ""
 "Foto\\'s en links. Toe te voegen aan pagina\\'s en taxonomieen op Digitale "
 "Overheid"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:308
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:310
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:323
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:325
 msgctxt "CPT verwijzing"
 msgid "Verwijzingen"
 msgstr "Verwijzingen"
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:309
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:326
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:324
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:341
 msgctxt "CPT verwijzing"
 msgid "Verwijzing"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:311
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:326
 msgctxt "CPT verwijzing"
 msgid "Alle verwijzingen"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:312
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:313
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:327
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:328
 msgctxt "CPT verwijzing"
 msgid "Nieuwe verwijzing toevoegen"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:314
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:329
 msgctxt "CPT verwijzing"
 msgid "Bewerk verwijzing"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:315
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:330
 msgctxt "CPT verwijzing"
 msgid "Nieuwe verwijzing"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:316
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:331
 msgctxt "CPT verwijzing"
 msgid "Bekijk verwijzing"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:317
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:332
 msgctxt "CPT verwijzing"
 msgid "Zoek verwijzing"
 msgstr ""
 
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:318
-#: ictuwp-plugin-rijkshuisstijlposttypes.php:319
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:333
+#: ictuwp-plugin-rijkshuisstijlposttypes.php:334
 msgctxt "CPT verwijzing"
 msgid "Geen verwijzingen gevonden"
 msgstr ""
