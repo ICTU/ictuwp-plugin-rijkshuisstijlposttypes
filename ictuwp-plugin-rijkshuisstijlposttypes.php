@@ -562,8 +562,18 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 
 
 			// single document in context of dossier
-			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/([^/]*)/?$', 'index.php?' . RHSWP_CPT_DOCUMENT . '=$matches[2]&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top' );
+			// base URl
+//			http://appeltaart.local:5757/dossiers/leer-en-expertisepunt-datagedreven-werken/dossier-documenten/
 
+			// Voor een bericht
+//			http://appeltaart.local:5757/dossiers/leer-en-expertisepunt-datagedreven-werken/dossier-berichten/dossier-categorie/achtergrondartikelen/data-agenda-overheid-2020-focust-op-beter-gebruik-van-data/
+
+			// Voor een document
+			http://appeltaart.local:5757/dossiers/leer-en-expertisepunt-datagedreven-werken/dossier-documenten/wmk-toets-3/
+			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/([^/]*)/?$', 'index.php?' . RHSWP_CPT_DOCUMENT . '=$matches[2]&' . RHSWP_CT_DOSSIER . '=$matches[1]&pagename=' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW, 'top' );
+
+
+//			http://appeltaart.local:5757/evenementen/data-delen-zonder-controle-te-verliezen-2/
 
 			// posts overview for category with paging
 			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/(.+?)/page/([0-9]+)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]&category_slug=$matches[2]&paged=$matches[3]', 'top' );
