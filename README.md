@@ -26,9 +26,11 @@ Aanleiding voor het scheiden van theme en definitie van CPT / CT is het opzetten
 * Maak slug voor CPT / CT ook vertaalbaar
 
 ## Current version:
-* 3.0.2 - Custom tax RHSWP_CT_DIGIBETER restored.
+* 3.0.4 - RHSWP_CT_DOSSIER toegevoegd aan quick edit.
 
 ## Version history
+* 3.0.4 - RHSWP_CT_DOSSIER toegevoegd aan quick edit.
+* 3.0.3 - Extra rewrite rule voor documenten in dossier-context
 * 3.0.2 - Custom tax RHSWP_CT_DIGIBETER restored.
 * 3.0.1 - 'externeverwijzing' (RHSWP_CPT_VERWIJZING) added as custom post type
 * 2.0.1 - Added translation file. Default language now English.

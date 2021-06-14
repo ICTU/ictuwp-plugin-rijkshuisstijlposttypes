@@ -8,7 +8,7 @@
  * Plugin Name:       ICTU / WP / DO Register post types and taxonomies
  * Plugin URI:        https://github.com/ICTU/Digitale-Overheid---WordPress-Custom-Post-Types-and-Taxonomies
  * Description:       Plugin for digitaleoverheid.nl to register custom post types and custom taxonomies
- * Version:           3.0.3
+ * Version:           3.0.4
  * Author:            Paul van Buuren
  * Author URI:        https://wbvb.nl/
  * License:           GPL-2.0+
@@ -175,7 +175,7 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 				"show_admin_column"  => false,
 				"show_in_rest"       => false,
 				"rest_base"          => "",
-				"show_in_quick_edit" => false,
+				"show_in_quick_edit" => true,
 			);
 			register_taxonomy( RHSWP_CT_DOSSIER, array( "post", "page", "links", 'event', "document" ), $args );
 
