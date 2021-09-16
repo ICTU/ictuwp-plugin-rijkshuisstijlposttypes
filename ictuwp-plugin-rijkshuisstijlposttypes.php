@@ -601,7 +601,6 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 			// met landingspagina
 			add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/([^/]*)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&getdossierfrompage=$matches[1]&category_slug=$matches[2]&v=1', 'top' );
 
-
 			// documents overview with paging
 			add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/page/([0-9]+)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '&getdossierfrompage=$matches[1]&paged=$matches[2]', 'top' );
 
@@ -610,70 +609,12 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 
 			// Single document
 			add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/([^/]*)/?$', 'index.php?' . RHSWP_CPT_DOCUMENT . '=$matches[2]&getdossierfrompage=$matches[1]', 'top' );
-			// legacy: dossier-term + document
-			//add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/([^/]*)/?$', 'index.php?' . RHSWP_CPT_DOCUMENT . '=$matches[2]&' . RHSWP_CT_DOSSIER . '=$matches[1]&pagename=' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW, 'top' );
-
-
-			// UITGESCHAKELD 	// TODO [ ] single post  for dossier overzichtspagina with category without paging
-			// UITGESCHAKELD 	add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/([^/]*)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&getdossierfrompage=$matches[1]&category_slug=$matches[2]&yo=vers', 'top' );
-
-			// UITGESCHAKELD 	//  TODO [ ] documents overview for dossier overzichtspagina with category and with paging
-			// UITGESCHAKELD 	add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW. '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/(.+?)/page/([0-9]+)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&getdossierfrompage=$matches[1]&category_slug=$matches[2]&paged=$matches[3]&yo=dubbelfris', 'top' );
-
-			// UITGESCHAKELD 	//  TODO [ ] documents overview for dossier overzichtspagina with category without paging
-			// UITGESCHAKELD 	add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/([^/]*)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&getdossierfrompage=$matches[1]&category_slug=$matches[2]&yo=vers', 'top' );
-
-			// UITGESCHAKELD 	//  TODO [ ] events overview for dossier overzichtspagina with category and with paging
-			// UITGESCHAKELD 	add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW. '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/(.+?)/page/([0-9]+)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&getdossierfrompage=$matches[1]&category_slug=$matches[2]&paged=$matches[3]&yo=dubbelfris', 'top' );
-
-			// UITGESCHAKELD 	//  TODO [ ] events overview for dossier overzichtspagina with category without paging
-			// UITGESCHAKELD 	add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/([^/]*)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&getdossierfrompage=$matches[1]&category_slug=$matches[2]&yo=vers', 'top' );
-
-
-
-			// UITGESCHAKELD 	// rewrite rules for posts in dossier context
-			// UITGESCHAKELD 	add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERPOSTCONTEXT . '/?$', 'index.php?pagename=$matches[1]', 'top' );
-
-			// UITGESCHAKELD 	// rewrite rules for documents in dossier context
-			// UITGESCHAKELD 	add_rewrite_rule( '(.+?)(/' . RHSWP_DOSSIERDOCUMENTCONTEXT . '/)(.+?)/?$', 'index.php?document=$matches[3]&' . RHSWP_DOSSIERPOSTCONTEXT . '=$matches[1]', 'top' );
-			// UITGESCHAKELD 	add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERDOCUMENTCONTEXT . '/?$', 'index.php?pagename=$matches[1]', 'top' );
-
-			// UITGESCHAKELD 	// rewrite rules for events in dossier context
-			// UITGESCHAKELD 	add_rewrite_rule( '(.+?)(/' . RHSWP_DOSSIERLANDINGSPAGINA . '/)(.+?)/?$', 'index.php?event=$matches[3]&' . RHSWP_DOSSIERPOSTCONTEXT . '=$matches[1]', 'top' );
-			// UITGESCHAKELD 	add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERLANDINGSPAGINA . '/?$', 'index.php?pagename=$matches[1]', 'top' );
-
-			// UITGESCHAKELD 	// posts overview with paging
-			// UITGESCHAKELD 	add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/page/([0-9]+)/?$', 'index.php?paged=$matches[2]&pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top' );
-
-			// UITGESCHAKELD 	// posts overview without paging
-			// UITGESCHAKELD 	add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top' );
 
 			// events overview with paging
 			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTEVENTOVERVIEW . '/page/([0-9]+)/?$', 'index.php?paged=$matches[2]&pagename=' . RHSWP_DOSSIERCONTEXTEVENTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top' );
 
 			// events overview without paging
 			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTEVENTOVERVIEW . '/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTEVENTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top' );
-
-
-			// UITGESCHAKELD 	// single document in context of dossier
-			// UITGESCHAKELD 	// base URl
-						//			http://appeltaart.local:5757/dossiers/leer-en-expertisepunt-datagedreven-werken/dossier-documenten/
-
-			// UITGESCHAKELD 	// Voor een bericht
-						//			http://appeltaart.local:5757/dossiers/leer-en-expertisepunt-datagedreven-werken/dossier-berichten/dossier-categorie/achtergrondartikelen/data-agenda-overheid-2020-focust-op-beter-gebruik-van-data/
-
-
-			// UITGESCHAKELD 	// posts overview for category with paging
-			// UITGESCHAKELD 	add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/(.+?)/page/([0-9]+)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]&category_slug=$matches[2]&paged=$matches[3]', 'top' );
-
-			// UITGESCHAKELD 	// single post in context of dossier and category
-			// UITGESCHAKELD 	add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/([^/]*)/([^/]*)/?$', 'index.php?' . RHSWP_CT_DOSSIER . '=$matches[1]&category_slug=$matches[2]&name=$matches[3]', 'top' );
-
-			// UITGESCHAKELD 	// posts overview for category without paging
-			// UITGESCHAKELD 	add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/([^/]*)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]&category_slug=$matches[2]', 'top' );
-
-			// UITGESCHAKELD 	// posts overview without category without paging
-			// UITGESCHAKELD 	add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/([^/]*)/?$', 'index.php?' . RHSWP_CT_DOSSIER . '=$matches[1]&name=$matches[2]', 'top' );
 
 			if ( function_exists( 'get_field' ) ) {
 				if ( get_field( 'global_search_page', 'option' ) ) {
