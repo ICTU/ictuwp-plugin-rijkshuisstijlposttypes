@@ -604,7 +604,7 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 			//============================================================================================
 			// DOCUMENTS
 			//============================================================================================
-			// documents overview without paging
+			// documents overview without paging (v3.0.5)
 			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top' );
 
 			// documents overview with paging
