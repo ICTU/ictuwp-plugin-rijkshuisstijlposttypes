@@ -601,6 +601,12 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 			// met landingspagina
 			add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/([^/]*)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&getdossierfrompage=$matches[1]&category_slug=$matches[2]&v=1', 'top' );
 
+			//============================================================================================
+			// DOCUMENTS
+			//============================================================================================
+			// documents overview without paging
+			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top' );
+
 			// documents overview with paging
 			add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/page/([0-9]+)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '&getdossierfrompage=$matches[1]&paged=$matches[2]', 'top' );
 
@@ -610,6 +616,9 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 			// Single document
 			add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTDOCUMENTOVERVIEW . '/([^/]*)/?$', 'index.php?' . RHSWP_CPT_DOCUMENT . '=$matches[2]&getdossierfrompage=$matches[1]', 'top' );
 
+			//============================================================================================
+			// EVENTS
+			//============================================================================================
 			// events overview with paging
 			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTEVENTOVERVIEW . '/page/([0-9]+)/?$', 'index.php?paged=$matches[2]&pagename=' . RHSWP_DOSSIERCONTEXTEVENTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]', 'top' );
 
