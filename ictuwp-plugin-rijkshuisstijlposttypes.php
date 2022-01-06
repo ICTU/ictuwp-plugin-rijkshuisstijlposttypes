@@ -581,6 +581,22 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 			//  dossier-landingspagina: los + single bericht
 			add_rewrite_rule( '(.+?)(/' . RHSWP_DOSSIERPOSTCONTEXT . '/)(.+?)/?$', 'index.php?name=$matches[3]&getdossierfrompage=$matches[1]', 'top' );
 
+			// legacy:
+			//http://www.digitaleoverheid.test/dossiers/rog-regie-op-gegevens/dossier-berichten/dossier-categorie/achtergrondartikelen/
+			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/(.+?)/page/([0-9]+)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]&category_slug=$matches[2]&paged=$matches[3]&v=4', 'top' );
+
+			// posts overview for dossier overzichtspagina with category without paging
+			// legacy:
+			//http://www.digitaleoverheid.test/dossiers/rog-regie-op-gegevens/dossier-berichten/dossier-categorie/achtergrondartikelen/
+			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/(.+?)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]&category_slug=$matches[2]&v=3', 'top' );
+
+			// legacy:
+			//http://www.digitaleoverheid.test/dossiers/rog-regie-op-gegevens/dossier-berichten/dossier-categorie/achtergrondartikelen/
+			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/(.+?)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]&category_slug=$matches[2]&v=2', 'top' );
+			// met landingspagina
+			add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/([^/]*)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&getdossierfrompage=$matches[1]&category_slug=$matches[2]&v=1', 'top' );
+
+
 
 			// posts overview for dossier overzichtspagina, no category, with paging
 			add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/page/([0-9]+)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&getdossierfrompage=$matches[1]&paged=$matches[2]', 'top' );
@@ -589,17 +605,7 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 			add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&getdossierfrompage=$matches[1]', 'top' );
 
 			// posts overview for dossier overzichtspagina with category and with paging
-			add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW. '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/(.+?)/page/([0-9]+)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&getdossierfrompage=$matches[1]&category_slug=$matches[2]&paged=$matches[3]', 'top' );
-			// legacy:
-			//http://www.digitaleoverheid.test/dossiers/rog-regie-op-gegevens/dossier-berichten/dossier-categorie/achtergrondartikelen/
-			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/(.+?)/page/([0-9]+)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]&category_slug=$matches[2]&paged=$matches[3]', 'top' );
-
-			// posts overview for dossier overzichtspagina with category without paging
-			// legacy:
-			//http://www.digitaleoverheid.test/dossiers/rog-regie-op-gegevens/dossier-berichten/dossier-categorie/achtergrondartikelen/
-			add_rewrite_rule( RHSWP_CT_DOSSIER . '/(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/(.+?)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&' . RHSWP_CT_DOSSIER . '=$matches[1]&category_slug=$matches[2]&v=2', 'top' );
-			// met landingspagina
-			add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/([^/]*)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&getdossierfrompage=$matches[1]&category_slug=$matches[2]&v=1', 'top' );
+			add_rewrite_rule( '(.+?)/' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW. '/' . RHSWP_DOSSIERCONTEXTCATEGORYPOSTOVERVIEW . '/(.+?)/page/([0-9]+)/?$', 'index.php?pagename=' . RHSWP_DOSSIERCONTEXTPOSTOVERVIEW . '&getdossierfrompage=$matches[1]&category_slug=$matches[2]&paged=$matches[3]&v=5', 'top' );
 
 			//============================================================================================
 			// DOCUMENTS
