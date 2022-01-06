@@ -26,10 +26,10 @@ Aanleiding voor het scheiden van theme en definitie van CPT / CT is het opzetten
 * Maak slug voor CPT / CT ook vertaalbaar
 
 ## Current version:
-* 3.0.6.a - Prioriteit gewijzigd om paginering bij nieuwsberichten op dossier mogelijk te maken.
+* 3.0.6 - Prioriteit gewijzigd om paginering bij nieuwsberichten op dossier mogelijk te maken.
 
 ## Version history
-* 3.0.6.a - Prioriteit gewijzigd om paginering bij nieuwsberichten op dossier mogelijk te maken.
+* 3.0.6 - Prioriteit gewijzigd om paginering bij nieuwsberichten op dossier mogelijk te maken.
 * 3.0.4 - RHSWP_CT_DOSSIER toegevoegd aan quick edit.
 * 3.0.3 - Extra rewrite rule voor documenten in dossier-context
 * 3.0.2 - Custom tax RHSWP_CT_DIGIBETER restored.
