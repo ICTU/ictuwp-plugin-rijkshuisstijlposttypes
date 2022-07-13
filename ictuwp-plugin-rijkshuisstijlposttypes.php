@@ -41,10 +41,6 @@ if ( ! defined( 'RHSWP_CPT_DOCUMENT' ) ) {
 	define( 'RHSWP_CPT_DOCUMENT', 'document' );   // slug for custom taxonomy 'document'
 }
 
-if ( ! defined( 'RHSWP_CPT_SLIDER' ) ) {
-	define( 'RHSWP_CPT_SLIDER', 'slidertje' );  // slug for custom taxonomy 'dossier'
-}
-
 // @since 3.0.2
 if ( ! defined( 'RHSWP_CPT_VERWIJZING' ) ) {
 	define( 'RHSWP_CPT_VERWIJZING', 'externeverwijzing' );
@@ -263,47 +259,6 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 				"taxonomies"          => array( "dossiers" ),
 			);
 			register_post_type( RHSWP_CPT_DOCUMENT, $args );
-
-			// ---------------------------------------------------------------------------------------------------
-			// Carrousels custom post type
-			$labels = array(
-				"name"                  => _x( 'Carrousels', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"singular_name"         => _x( 'Carrousel', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"menu_name"             => _x( 'Carrousels', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"all_items"             => _x( 'Alle carrousels', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"add_new"               => _x( 'Nieuwe carrousel toevoegen', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"add_new_item"          => _x( 'Voeg nieuwe carrousel toe', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"edit_item"             => _x( 'Bewerk carrousel', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"new_item"              => _x( 'Nieuwe carrousel', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"view_item"             => _x( 'Bekijk carrousel', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"search_items"          => _x( 'Zoek carrousel', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"not_found"             => _x( 'Geen carrousels gevonden', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"not_found_in_trash"    => _x( 'Geen carrousels gevonden in de prullenbak', 'caroussel', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"featured_image"        => __( 'Featured image', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"archives"              => __( 'Archives', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"uploaded_to_this_item" => __( 'Uploaded media', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-			);
-
-			$args = array(
-				"label"               => _x( 'Carrousels', 'Carrousels label', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"labels"              => $labels,
-				"description"         => _x( "Foto\'s en links. Toe te voegen aan pagina\'s en taxonomieen op Digitale Overheid", 'Carrousels description', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"public"              => true,
-				"publicly_queryable"  => false,
-				"show_ui"             => true,
-				"show_in_rest"        => false,
-				"rest_base"           => "",
-				"has_archive"         => false,
-				"show_in_menu"        => true,
-				"exclude_from_search" => false,
-				"capability_type"     => "post",
-				"map_meta_cap"        => true,
-				"hierarchical"        => false,
-				"rewrite"             => array( "slug" => "carrousel", "with_front" => false ),
-				"query_var"           => false,
-				"supports"            => array( "title", "excerpt", "revisions" ),
-			);
-			register_post_type( RHSWP_CPT_SLIDER, $args );
 
 
 			// ---------------------------------------------------------------------------------------------------
