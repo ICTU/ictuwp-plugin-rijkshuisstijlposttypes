@@ -10,6 +10,7 @@ Aanleiding voor het scheiden van theme en definitie van CPT / CT is het opzetten
 ### Custom Post Types:
 
 * document, gedefinieerd via RHSWP_CPT_DOCUMENT
+* slidertje, gedefinieerd via RHSWP_CPT_SLIDER
 * externeverwijzing, gedefinieerd via RHSWP_CPT_VERWIJZING
 
 ### Custom Taxonomies:
