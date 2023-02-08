@@ -1,7 +1,7 @@
 
 
 
-# sh '/Users/paul/shared-paul-files/Webs/git-repos/Digitale-Overheid---WordPress-Custom-Post-Types-and-Taxonomies/distribute.sh' &>/dev/null
+# sh '/Users/paul/shared-paul-files/Webs/ICTU/vagrant-digitaleoverheid/www/digitaleoverheid/public_html/wp-content/plugins/ictuwp-plugin-rijkshuisstijlposttypes/distribute.sh' &>/dev/null
 
 echo '----------------------------------------------------------------';
 echo 'Distribute DO post type plugin';
@@ -46,11 +46,11 @@ rsync -ah '/Users/paul/shared-paul-files/Webs/temp/languages/' '/Users/paul/shar
 
 # languages Sentia live
 rsync -ah '/Users/paul/shared-paul-files/Webs/temp/languages/' '/Users/paul/shared-paul-files/Webs/ICTU/Gebruiker Centraal/sentia/live/www/wp-content/languages/plugins/'
-		
+
 
 
 # copy from temp dir to dev-env
-rsync -r -a --delete '/Users/paul/shared-paul-files/Webs/temp/' '/Users/paul/shared-paul-files/Webs/ICTU/Gebruiker Centraal/development/wp-content/plugins/ictuwp-plugin-rijkshuisstijlposttypes/' 
+rsync -r -a --delete '/Users/paul/shared-paul-files/Webs/temp/' '/Users/paul/shared-paul-files/Webs/ICTU/Gebruiker Centraal/development/wp-content/plugins/ictuwp-plugin-rijkshuisstijlposttypes/'
 
 # en een kopietje naar Sentia accept
 rsync -r -a --delete '/Users/paul/shared-paul-files/Webs/temp/' '/Users/paul/shared-paul-files/Webs/ICTU/Gebruiker Centraal/sentia/accept/www/wp-content/plugins/ictuwp-plugin-rijkshuisstijlposttypes/'
