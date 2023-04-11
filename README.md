@@ -25,4 +25,4 @@ Aanleiding voor het scheiden van theme en definitie van CPT / CT is het opzetten
 * Maak slug voor CPT / CT ook vertaalbaar
 
 ## Current version:
-* 3.1.1 - Caroussel CPT weggehaald.
+* 3.1.2 - PHP 8.x compatibility checks.

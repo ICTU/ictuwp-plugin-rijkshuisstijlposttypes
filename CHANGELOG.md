@@ -1,6 +1,7 @@
 # Changelog
 
 ## Version history
+* 3.1.2 - PHP 8.x compatibility checks.
 * 3.1.1 - Caroussel CPT weggehaald.
 * 3.0.6 - Prioriteit gewijzigd om paginering bij nieuwsberichten op dossier mogelijk te maken.
 * 3.0.4 - RHSWP_CT_DOSSIER toegevoegd aan quick edit.
