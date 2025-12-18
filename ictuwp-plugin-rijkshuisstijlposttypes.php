@@ -33,10 +33,6 @@ if ( ! defined( 'RHSWP_CT_DOSSIER' ) ) {
 	define( 'RHSWP_CT_DOSSIER', 'dossiers' );   // slug for custom taxonomy 'dossier'
 }
 
-if ( ! defined( 'RHSWP_CT_DIGIBETER' ) ) {
-	define( 'RHSWP_CT_DIGIBETER', 'beleidsterreinen' );   // custom taxonomy for digitale agenda
-}
-
 if ( ! defined( 'RHSWP_CPT_DOCUMENT' ) ) {
 	define( 'RHSWP_CPT_DOCUMENT', 'document' );   // slug for custom taxonomy 'document'
 }
@@ -175,48 +171,6 @@ if ( ! class_exists( 'RHSWP_Register_taxonomies' ) ) :
 			);
 			register_taxonomy( RHSWP_CT_DOSSIER, array( "post", "page", "links", 'event', "document" ), $args );
 
-			// ---------------------------------------------------------------------------------------------------
-			// digitbeter kleuren custom taxonomy
-			$labels = array(
-				"name"          => _x( 'Onderdelen NL Digibeter', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"singular_name" => _x( 'Onderdeel NL Digibeter', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' )
-			);
-
-			$labels = array(
-				"name"                  => _x( 'Digibeter-kleuren', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"singular_name"         => _x( 'Digibeter-kleur', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"menu_name"             => _x( 'Digibeter-kleuren', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"all_items"             => _x( 'Alle kleuren', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"add_new"               => _x( 'Nieuw onderdeel toevoegen', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"add_new_item"          => _x( 'Voeg nieuw onderdeel toe', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"edit_item"             => _x( 'Bewerk onderdeel', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"new_item"              => _x( 'Nieuw onderdeel', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"view_item"             => _x( 'Bekijk onderdeel', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"search_items"          => _x( 'Zoek onderdeel', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"not_found"             => _x( 'Geen onderdelen gevonden', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"not_found_in_trash"    => _x( 'Geen onderdelen gevonden in de prullenbak', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"featured_image"        => __( 'Featured image', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"archives"              => __( 'Archives', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"uploaded_to_this_item" => __( 'Uploaded media', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-			);
-
-			$args = array(
-				"label"              => _x( 'Onderdelen NL Digibeter', 'Digibeter label', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"labels"             => $labels,
-				"public"             => true,
-				"hierarchical"       => true,
-				"label"              => _x( 'Onderdelen NL Digibeter', 'digibeterkleuren', 'ictuwp-plugin-rijkshuisstijlposttypes' ),
-				"show_ui"            => true,
-				"show_in_menu"       => true,
-				"show_in_nav_menus"  => true,
-				"query_var"          => true,
-				"rewrite"            => array( 'slug' => RHSWP_CT_DIGIBETER, 'with_front' => true, ),
-				"show_admin_column"  => false,
-				"show_in_rest"       => false,
-				"rest_base"          => "",
-				"show_in_quick_edit" => false,
-			);
-			register_taxonomy( RHSWP_CT_DIGIBETER, array( "page" ), $args );
 
 			// ---------------------------------------------------------------------------------------------------
 			// documenten custom post type
