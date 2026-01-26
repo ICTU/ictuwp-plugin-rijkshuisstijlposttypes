@@ -20,3 +20,4 @@ wp-content/plugins/hello.php
 *.codekit3
 .idea/*
 
+.DS_Store
