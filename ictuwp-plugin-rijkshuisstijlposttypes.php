@@ -5,7 +5,7 @@
  * @package           ictuwp-plugin-ictuwp-plugin-rijkshuisstijlposttypes
  *
  * @wordpress-plugin
- * Plugin Name:       ICTU / WP / DO Register post types and taxonomies
+ * Plugin Name:       ICTU / WP / DO - Register post types and taxonomies
  * Plugin URI:        https://github.com/ICTU/Digitale-Overheid---WordPress-Custom-Post-Types-and-Taxonomies
  * Description:       Plugin for digitaleoverheid.nl to register custom post types and custom taxonomies
  * Version:           4.0.1
