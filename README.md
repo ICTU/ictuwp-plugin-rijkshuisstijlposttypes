@@ -25,4 +25,4 @@ Aanleiding voor het scheiden van theme en definitie van CPT / CT is het opzetten
 * Maak slug voor CPT / CT ook vertaalbaar
 
 ## Current version:
-* 4.0.1 - removed RHSWP_CT_DIGIBETER.
+* 4.0.2 - Added custom taxonomies to REST API.

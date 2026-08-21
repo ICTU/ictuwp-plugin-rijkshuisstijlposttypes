@@ -1,6 +1,7 @@
 # Changelog
 
 ## Version history
+* 4.0.2 - Added custom taxonomies to REST API.
 * 4.0.1 - removed RHSWP_CT_DIGIBETER.
 * 3.1.2 - PHP 8.x compatibility checks.
 * 3.1.1 - Caroussel CPT weggehaald.
