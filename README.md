@@ -25,4 +25,4 @@ Aanleiding voor het scheiden van theme en definitie van CPT / CT is het opzetten
 * Maak slug voor CPT / CT ook vertaalbaar
 
 ## Current version:
-* 4.1.1 - Taxonomy RHSWP_CT_DOSSIER also applies to CPT_INNOVATIEPROJECT post type.
+* 4.1.2 - Fallback for CPT_PROJECT is CPT_INNOVATIEPROJECT.
